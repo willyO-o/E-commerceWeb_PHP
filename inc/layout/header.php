@@ -48,13 +48,21 @@
         <div id="top-header">
             <div class="container">
                 <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i> +591 2245872 (ficticio)</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i> PcBolivia2019@gmail.com</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i>  La Paz Zona 1 #1234</a></li>
                 </ul>
                 <ul class="header-links pull-right">
-                    <li><a href="registro.php"><i class="fa fa-registered"></i> Registro</a></li>
-                    <li><a data-toggle="modal" data-target="#login"><i class="fa fa-user-o"></i> My Account</a></li>
+                    <?php 
+                        if (!isset($_SESSION['user'])) { ?>
+                    
+                        <li><a href="registro.php"><i class="fa fa-registered"></i> Registro</a></li>
+                        <li><a data-toggle="modal" data-target="#login"><i class="fa fa-user-o"></i>Login</a></li>
+
+                    <?php }else{ ?>
+                        <li><a href="index.php?salir=true"><i class="fa fa-sign-out"></i>Cerrar Session</a></li>
+
+                    <?php } ?>
                 </ul>
             </div>
         </div>

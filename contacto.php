@@ -1,11 +1,7 @@
 <?php 
 	require_once 'inc/layout/header.php';
 	require_once 'inc/layout/navegacion.php';
-	require_once 'admin/modelos/Cliente.php';
 
-	$ob_cliente= Cliente::ningunDato();
-
-	$ciudades=$ob_cliente->selectCiudad();
 ?>
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">

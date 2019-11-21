@@ -151,6 +151,18 @@ class Venta
         }
 
     
+        public function selectCantidades($tabla)   
+        {
+            $con=new Conexion();
     
+            $sql= "SELECT COUNT(*) as cantidad FROM $tabla ";
+    
+            $res=$con->query($sql);
+            $respuesta=$res->fetch_assoc();
+            
+            $con->close();
+
+            return $respuesta['cantidad'];
+        }
 
 }

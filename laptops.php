@@ -60,29 +60,7 @@
             <!-- STORE -->
             <div id="store" class="col-md-9">
                 <!-- store top filter -->
-                <div class="store-filter clearfix">
-                    <div class="store-sort">
-                        <label>
-                            Sort By:
-                            <select class="input-select">
-                                <option value="0">Popular</option>
-                                <option value="1">Position</option>
-                            </select>
-                        </label>
-
-                        <label>
-                            Show:
-                            <select class="input-select">
-                                <option value="0">20</option>
-                                <option value="1">50</option>
-                            </select>
-                        </label>
-                    </div>
-                    <ul class="store-grid">
-                        <li class="active"><i class="fa fa-th"></i></li>
-                        <li><a href="#"><i class="fa fa-th-list"></i></a></li>
-                    </ul>
-                </div>
+                <br>
                 <!-- /store top filter -->
                                     
                 <!-- store products -->
@@ -147,14 +125,14 @@
                     <?php  if(mysqli_num_rows($res_prod_marc)>0){?>
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
-                    <span class="store-qty">Showing 20-100 products</span>
-                    <ul class="store-pagination">
+                    <span class="store-qty">Mostrando <?php echo mysqli_num_rows($res_prod_marc)?> de <?php echo mysqli_num_rows($res_prod_marc)?> productos</span>
+                    <!-- <ul class="store-pagination">
                         <li class="active">1</li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    </ul> -->
                 </div>
 
                     <?php } ?>

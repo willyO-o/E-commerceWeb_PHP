@@ -3,6 +3,16 @@
     require_once 'templates/barra.php';
     require_once 'templates/aside.php';
 
+    require_once 'modelos/Venta.php';
+
+    $ob_venta=Venta::ningunDato();
+    $cantidad_venta=$ob_venta->selectCantidades('venta');
+    $cantidad_cliente=$ob_venta->selectCantidades('cliente');
+    $cantidad_pedidos=$ob_venta->selectCantidades('pedido');
+    $cantidad_contacto=$ob_venta->selectCantidades('contacto');
+
+    //echo $cantidad_cliente;
+
 ?>
 <!-- /.navbar -->
 
@@ -22,13 +32,14 @@
     </div><!-- /.container-fluid -->
 </section>
 
+
 <!-- Main content -->
 <section class="content">
 
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Title</h3>
+            <h3 class="card-title">Resumen de transacciones</h3>
 
 
         </div>
@@ -38,11 +49,73 @@
 
         <div class="card-body">
 
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><?php echo $cantidad_venta ?></h3>
 
+                <p>Total Ventas</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="crud-ventas.php" class="small-box-footer">Mas informacion <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?php echo $cantidad_pedidos ?></h3>
+
+                <p>Total Pedidos</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-clipboard"></i>
+              </div>
+              <a href="crud-pedidos.php" class="small-box-footer">Mas informacion <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><?php echo $cantidad_cliente ?></h3>
+
+                <p>Total Clientes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="ver-usuarios.php" class="small-box-footer">Mas informacion <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><?php echo $cantidad_contacto ?></h3>
+
+                <p>Total Mensajes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-ios-email"></i>
+              </div>
+              <a href="contacto.php" class="small-box-footer">Mas informacion <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <hr>
         
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Line Chart</h3>
+                    <h3 class="card-title">Estadisticas de Ventas</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -65,10 +138,6 @@
 
 
 
-    <!-- /.card-body -->
-    <div class="card-footer">
-        Footer
-    </div>
 
     <!-- /.card -->
 

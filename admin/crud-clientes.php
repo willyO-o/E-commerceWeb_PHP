@@ -48,12 +48,12 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>NIT</th>
+                                <th>NIT o C.I.</th>
                                 <th>Correo</th>
                                 <th>Telefono</th>
                                 <th>Direccion</th>
                                 <th>Ciudad</th>
-                                <th>Acciones</th>
+                                <th>fecha registro</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,12 +89,12 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>NIT</th>
+                                <th>NIT o C.I.</th>
                                 <th>Correo</th>
                                 <th>Telefono</th>
                                 <th>Direccion</th>
                                 <th>Ciudad</th>
-                                <th>Acciones</th>
+                                <th>fecha registro</th>
                             </tr>
                         </tfoot>
                     </table>

@@ -98,7 +98,7 @@ class Usuario
             $password_hashed= password_hash($this->password, PASSWORD_BCRYPT ,$opciones);
 
             $con =new Conexion();
-            $sql = "INSERT INTO usuario(usuario,nombre,password) VALUES ('$this->usuario','$this->nombre','$password_hashed')";
+            $sql = "INSERT INTO usuario VALUES (NULL,'$this->usuario','$this->nombre','$password_hashed',1,NULL)";
 
             $res=$con->query($sql,$con->affected_rows);
 

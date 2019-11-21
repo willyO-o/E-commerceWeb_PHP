@@ -121,7 +121,7 @@ class Pedido
             $con=new Conexion();
 
             $sql="SELECT id_pedido, DATEDIFF( NOW( ) , fecha_pedido ) diferencia from pedido
-                WHERE DATEDIFF( NOW( ) , fecha_pedido )>3 ";
+                WHERE DATEDIFF( NOW( ) , fecha_pedido )>3  AND estado_pedido=1 ";
             $resp=$con->query($sql);
 
             if (mysqli_num_rows($resp)>0) {

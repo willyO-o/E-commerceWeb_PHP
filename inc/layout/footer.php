@@ -15,16 +15,16 @@
 
 							<ul class="newsletter-follow">
 								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="https://twitter.com/" target="_blank"> <i class="fa fa-twitter"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
+									<a href="https://www.pinterest.es/" target="_blank"><i class="fa fa-pinterest"></i></a>
 								</li>
 							</ul>
 						</div>
@@ -58,58 +58,45 @@
 				<div class="container">
 					<!-- row -->
 					<div class="row">
-						<div class="col-md-3 col-xs-6">
+						<div class="col-md-4 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">About Usaaaaaaaaaaaaaaa</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<h3 class="footer-title">Acerca de</h3>
+								<p>Venta de Laptops, Accesorios y Componentes para PC</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>Palacio de Comunicaciones, Avenida Mariscal Santa Cruz, La Paz Zona 1</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+591 2245872 (ficticio)</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>PcBolivia2019@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="col-md-3 col-xs-6">
+						<div class="col-md-4 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Categories</h3>
+								<h3 class="footer-title">Categorias</h3>
 								<ul class="footer-links">
-									<li><a href="#">Hot deals</a></li>
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
+									<li><a href="laptops.php">Laptops</a></li>
+									<li><a href="tienda.php?id_cat=5">Procesadores</a></li>
+									<li><a href="tienda.php?id_cat=6">Tarjetas Madre</a></li>
+									<li><a href="tienda.php?id_cat=12">Accesorios</a></li>
 								</ul>
 							</div>
 						</div>
 
 						<div class="clearfix visible-xs"></div>
 
-						<div class="col-md-3 col-xs-6">
+						<div class="col-md-4 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Information</h3>
+								<h3 class="footer-title">Informacion</h3>
 								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Orders and Returns</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
+									<li><a href="nosotros.php">Nosotros</a></li>
+									<li><a href="contacto.php">Contacto</a></li>
+									<li><a href="#"></a></li>
+									<li><a href="#">Terminos & Condiciones</a></li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Service</h3>
-								<ul class="footer-links">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">View Cart</a></li>
-									<li><a href="#">Wishlist</a></li>
-									<li><a href="#">Track My Order</a></li>
-									<li><a href="#">Help</a></li>
-								</ul>
-							</div>
-						</div>
+						
 					</div>
 					<!-- /row -->
 				</div>
@@ -133,7 +120,7 @@
 							</ul>
 							<span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> Proyecto Tecnologias Emergentes I | UPEA (Pagina de Tienda Ficticia)
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</span>
 						</div>

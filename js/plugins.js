@@ -26,9 +26,9 @@
 $(function () {
   'use strict';
 
-  // cuenta regresiva
+  // cuenta regresiva ofertas
 
-  $('.hot-deal-countdown').countdown('2019/11/29 21:00:00',function (event) {
+  $('.hot-deal-countdown').countdown('2019/12/21 21:00:00',function (event) {
     $('#dias').html(event.strftime('%D'));
     $('#horas').html(event.strftime('%H'));
     $('#minutos').html(event.strftime('%M'));
