@@ -806,7 +806,7 @@ $('.btn-ver-pagar').on('click', function name() {
 
     Swal.fire({
         title: 'Desea cambiar el estado a Pagado?',
-        text: "Esta accion no se puede deshacer!",
+        text: "Esta accion no se puede deshacer!, al aceptar se confirma que el pago por la compra del producto fue realizado por el cliente",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -878,7 +878,7 @@ $('.tabla-crud-pedidos').on('click','.btn-pagar', function name(e) {
 
     Swal.fire({
         title: 'Desea cambiar el estado a Pagado?',
-        text: "Esta accion no se puede deshacer!",
+        text: "Esta accion no se puede deshacer!, al aceptar se confirma que el pago por la compra del producto fue realizado por el cliente",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

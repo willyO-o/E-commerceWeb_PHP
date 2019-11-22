@@ -190,67 +190,98 @@ $(function () {
         
     });
 
+
+
     $('#realizar-pedido').on('submit', function (e) {
         e.preventDefault();
-        
-        $('.fondo-loader').html('<div class="loading-img-ajax"><img  src="css/ajax-loader.gif" alt="loading" /><br/>Un momento, por favor...</div>');
-        
- 
-        
-        let datos=$(this).serializeArray();
 
-        //console.log(datos);
-        
+        let radio=$('#realizar-pedido input[name=payment]:radio').is(':checked');
 
- 
- 
-        $.ajax({
- 
-         type: $(this).attr('method'),
- 
-         data: datos,
- 
-         url: $(this).attr('action'),
- 
-         dataType: 'json',
- 
-         success: function (data) {
-             let resultado= data;
-             $('.loading-img-ajax').fadeOut(600).html();
-            // console.log(resultado);
-             
-            if (resultado.respuesta ==='exitoso') {
-                
-                 Swal.fire(
-                     'Listo !!',
-                     'su pedido fue procesado con exito, Se le ha enviado un correo a su cuenta con los detalles del pedido ',
-                     'success'
-                    )
+        if (radio) {
+            $('.fondo-loader').html('<div class="loading-img-ajax"><img  src="css/ajax-loader.gif" alt="loading" /><br/>Un momento, por favor...</div>');
+        
+        
+            let datos=$(this).serializeArray();
+    
+            //console.log(datos);
+            
+     
+            $.ajax({
+     
+             type: $(this).attr('method'),
+     
+             data: datos,
+     
+             url: $(this).attr('action'),
+     
+             dataType: 'json',
+     
+             success: function (data) {
+                 let resultado= data;
+                 $('.loading-img-ajax').fadeOut(600).html();
+                // console.log(resultado);
+                 
+                if (resultado.respuesta ==='exitoso') {
                     
-                    
-                    setTimeout(() => {
-
-   
-                        location.href='index.php';
-
+                     Swal.fire(
+                         'Listo !!',
+                         'su pedido fue procesado con exito, Se le ha enviado un correo a su cuenta con los detalles del pedido ',
+                         'success'
+                        )
                         
-                    }, 5000);
-                     
-                       
- 
-             } else {
-                
-                 Swal.fire(
-                     'Error !!',
-                     'ocurrio un error ',
-                     'error'
-                 )
+                        
+                        setTimeout(() => {
+    
+       
+                            location.href='index.php';
+    
+                            
+                        }, 5000);
+                         
+                           
+     
+                 } else {
+                    
+                     Swal.fire(
+                         'Error !!',
+                         'ocurrio un error ',
+                         'error'
+                     )
+                 }
              }
-         }
-        });    
-     }); 
+            });   
 
+        }else{
+            let alerta=$('.alerta-pago');
+            alerta.removeClass('hidden');
+            
+        }
+    }); 
 
+    $('#realizar-pedido input[name=payment]:radio').change(function () {
+        let alerta=$('.alerta-pago');
+        alerta.removeClass('alert-danger');
+        alerta.addClass('alert-success');
+        alerta.html('Correcto...');
+        
+    });
+
+    // validar password
+    $('#realizar-pedido input[type=password]').on('keyup',function () {
+       
+        let pass=$(this);
+        let btn=$('#btn-enviar-pedido');
+        let conPass=$('#confirmPassword-pedido');
+
+        if (pass.val()==conPass.val()) {
+            btn.removeAttr('disabled');
+        }else{
+            btn.attr('disabled','disabled');
+        }
+
+        
+        
+    });
 
     function agregarAlCarrito(id, producto, imagen, precio,cantidad) {
 

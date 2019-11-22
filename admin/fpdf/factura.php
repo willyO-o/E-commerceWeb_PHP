@@ -98,7 +98,7 @@ $pdf->Cell(120,10,'CONCEPTO ',1,0,'C');
 $pdf->Cell(30,10,'Cantidad ',1,0,'C');
 $pdf->Cell(30,10,'SUB TOTAL ',1,1,'C');
 
-$pdf->SetFont('Times','',12);
+$pdf->SetFont('Times','',10);
 while ($row=$detalle->fetch_assoc()) {
     $pdf->Cell(120,10,utf8_decode($row['producto']),1,0);
     $pdf->Cell(30,10,utf8_decode($row['cantidad_pro']),1,0,'C');

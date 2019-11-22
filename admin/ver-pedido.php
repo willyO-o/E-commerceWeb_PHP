@@ -191,7 +191,7 @@
                         <div class="col-12">
                             
                             <button type="button" class="btn btn-success float-right btn-ver-pagar"
-                            <?php echo $pedido['estado_pedido']=!1  ? '':'disabled' ?>
+                            <?php echo $pedido['estado_pedido']==1  ? '':'disabled' ?>
                             data-id="<?php echo $pedido['estado_pedido']==1 ? $pedido['id_pedido'] :'' ;?>" data-toggle="tooltip" data-placement="left" title="Cambiar estado a pagado" >
                                 <i class="far fa-credit-card" ></i>
                                 Confirmar Pago

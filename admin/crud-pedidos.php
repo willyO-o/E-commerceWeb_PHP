@@ -96,7 +96,7 @@
                                 <td>
                                     <button  class="btn bg-success btn-pagar" 
                                         data-id="<?php echo $row['estado_pedido']==1 ? $row['id_pedido'] :'' ;?>" data-toggle="tooltip" data-placement="left" title="Cambiar estado a pagado"
-                                        <?php echo $row['estado_pedido']=!2  ? '':'disabled'?> >
+                                        <?php echo $row['estado_pedido'] ==1  ? '':'disabled'?> >
                                         pago
                                     </button>
                                     <a href="ver-pedido.php?id=<?php echo $row['id_pedido'] ;?>"  

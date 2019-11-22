@@ -109,11 +109,11 @@
                                 <div class="caption">
                                     <p>Por Favor Ingrese su Password</p>
                                     <div class="form-group">
-                                        <input class="input" type="password" name="password" placeholder="Password">
+                                        <input class="input" type="password" name="password" placeholder="Password" id="password-pedido">
                                     </div>
 
                                     <div class="form-group">
-                                        <input class="input" type="password" name="confirmPassword"
+                                        <input class="input" type="password" name="confirmPassword" id="confirmPassword-pedido"
                                             placeholder="Confirmar Password">
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
                                 <div class="caption">
                                     <p>He leido y Acepto todos los terminos y condiciones de la pagina</p>
                                     <input type="hidden" name="accion" value="registrar">
-                                    <input class="btn primary-btn btn-lg btn-block" type="submit" >
+                                    <input class="btn primary-btn btn-lg btn-block" type="submit" id="btn-enviar-pedido" >
                                 </div>
                             </div>
                         </div>
@@ -288,6 +288,8 @@
                                 <hr>
                             </div>
                         </div>
+
+                        <div class="alerta-pago alert alert-danger hidden"><b>¡Error!</b> Seleccione un metodo de pago </div>
                     </div>
                             
                     
@@ -303,18 +305,6 @@
 
                 </div>
                 <!-- /Order Details -->
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
