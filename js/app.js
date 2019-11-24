@@ -14,60 +14,7 @@ $(function () {
 
     //$("#navigation ul.main-nav  li:has(a[href$='"+window.location.pathname+"'])").addClass("active");
 
-    $('#registrar-cliente').on('submit', function (e) {
-        e.preventDefault();
- 
-        
-        let datos=$(this).serializeArray();
- 
- 
-        $.ajax({
- 
-         type: $(this).attr('method'),
- 
-         data: datos,
- 
-         url: $(this).attr('action'),
- 
-         dataType: 'json',
- 
-         success: function (data) {
-             let resultado= data;
-             
-             //console.log(resultado);
-             
-             if (resultado.respuesta==='existe') {
- 
-                 Swal.fire(
-                     'Error !!',
-                     'La Direccion de Correo ya existe, intente con otro ',
-                     'error'
-                   )
-                 
-             } else if (resultado.respuesta ==='insertado') {
-                 Swal.fire(
-                     'Listo !!',
-                     'Registrado.. ',
-                     'success'
-                     )
-
-                     $('#registrar-cliente')[0].reset();
-                     setTimeout(() => {
-                        window.location.href= 'index.php';
-                     }, 2000);
-                     
-                       
- 
-             } else {
-                 Swal.fire(
-                     'Error !!',
-                     'El La Direccion de Correo no se registro, intente de nuevo ',
-                     'error'
-                 )
-             }
-         }
-        });    
-     }); 
+  
  
 
      $('#editar-cliente').on('submit', function (e) {

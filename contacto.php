@@ -85,7 +85,7 @@
 								</div>
 							</div>
 							<div class="order-col">
-								<div><i class="fa fa-map-marker" aria-hidden="true"> </i> <a href="https://www.google.com/maps/place/Palacio+de+Comunicaciones,+Avenida+Mariscal+Santa+Cruz,+La+Paz+Zona+1/@-16.499364,-68.1376035,17z/data=!3m1!4b1!4m5!3m4!1s0x915f20711a2b8699:0x2a55724ef7fdf6ec!8m2!3d-16.499364!4d-68.1354095">Palacio de Comunicaciones, Avenida Mariscal Santa Cruz, La Paz Zona 1</a></div>
+								<div><i class="fa fa-map-marker" aria-hidden="true"> </i> <a href="https://www.google.com/maps/place/Palacio+de+Comunicaciones,+Avenida+Mariscal+Santa+Cruz,+La+Paz+Zona+1/@-16.499364,-68.1376035,17z/data=!3m1!4b1!4m5!3m4!1s0x915f20711a2b8699:0x2a55724ef7fdf6ec!8m2!3d-16.499364!4d-68.1354095" target="_blank">Palacio de Comunicaciones, Avenida Mariscal Santa Cruz, La Paz Zona 1</a></div>
 								<div><strong></strong></div>
 							</div>
 							<hr>
@@ -104,7 +104,7 @@
 								</div>
 							</div>
 							<div class="order-col">
-								<div><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="https://www.google.com/maps/@-17.7960733,-63.1844681,16.75z">Juan de Garay 405-383, Santa Cruz de la Sierra</a></div>
+								<div><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="https://www.google.com/maps/@-17.7960733,-63.1844681,16.75z" target="_blank">Juan de Garay 405-383, Santa Cruz de la Sierra</a></div>
 								<div><strong></strong></div>
 							</div>
 						</div>

@@ -1,12 +1,10 @@
 <?php 
 
-
 	require_once 'inc/layout/header.php';
 	if (isset($_GET['salir'])) {
-		if ($_GET['salir']==true) {
-			session_destroy();
-			header('location: index.php');
-		}
+		session_unset();
+		session_destroy();
+		header('location: index.php');
 	}
 	require_once 'inc/layout/navegacion.php';
 	require_once 'admin/modelos/Producto.php';

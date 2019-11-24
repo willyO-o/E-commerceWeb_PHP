@@ -29,46 +29,55 @@
     <!-- container -->
     <div class="container">
         <!-- row -->
-        <form action="admin/procesos/procesar-pedido.php" method="post" id="realizar-pedido">
+        <form action="admin/procesos/procesar-pedido.php" method="post" id="realizar-pedido"
+            inform="<?php echo isset($_SESSION['user']) ? 'existe': 'none' ;?>">
             <div class="row">
-                
-            <div class="fondo-loader"></div>
+
+                <div class="fondo-loader"></div>
 
                 <div class="col-md-7">
                     <!-- Billing Details -->
-                    <div class="billing-details <?php echo isset($_SESSION['user']) ? 'hidden': '' ;?>" id="formulario-pedido">
+                    <div class="billing-details <?php echo isset($_SESSION['user']) ? 'hidden': '' ;?>"
+                        id="formulario-pedido">
                         <div class="section-title">
                             <h3 class="title">Llena el formulario para realizar Tu pedido <br> <small>(todos los campos
                                     son
                                     obligatorios)</small></h3>
+                                    <hr>
+                            <h3>Si ya tienes tu cuenta Inicia Session ahorrar tiempo</h3>
                         </div>
 
 
 
-                        
+
 
                         <div class="form-group">
-                            <input class="input" type="text" name="nombre" placeholder="Nombres" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="text" name="nombre" placeholder="Nombres"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="apellido" placeholder="Apellidos" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="text" name="apellido" placeholder="Apellidos"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="nit" placeholder="C.I. o NIT" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="text" name="nit" placeholder="C.I. o NIT"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
 
                         <div class="form-group">
-                            <input class="input" type="text" name="direccion" placeholder="Direccion" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="text" name="direccion" placeholder="Direccion"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
 
                         <div class="form-group">
-                            <input class="input" type="tel" name="telefono" placeholder="Telefono" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="tel" name="telefono" placeholder="Telefono"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
 
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select name="ciudad" id="" class="input">
+                                    <select name="ciudad" id="ciudad" class="input">
                                         <option value="0">
                                             <-- Seleccione ciudad -->
                                         </option>
@@ -95,8 +104,10 @@
 
 
                         <div class="form-group">
-                            <input class="input" type="email" name="correo" placeholder="E-mail" <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
+                            <input class="input" type="email" name="correo" placeholder="E-mail"
+                                <?php echo isset($_SESSION['user']) ? '': 'required' ;?>>
                         </div>
+                        <div class="alerta-ciudad alert alert-danger hidden"></div>
 
 
                         <div class="form-group">
@@ -109,16 +120,20 @@
                                 <div class="caption">
                                     <p>Por Favor Ingrese su Password</p>
                                     <div class="form-group">
-                                        <input class="input" type="password" name="password" placeholder="Password" id="password-pedido">
+                                        <input class="input" type="password" name="password" placeholder="Password"
+                                            id="password-pedido">
                                     </div>
 
                                     <div class="form-group">
-                                        <input class="input" type="password" name="confirmPassword" id="confirmPassword-pedido"
-                                            placeholder="Confirmar Password">
+                                        <input class="input" type="password" name="confirmPassword"
+                                            id="confirmPassword-pedido" placeholder="Confirmar Password">
                                     </div>
+                                    <div class="alerta-contrasenia alert alert-danger hidden"></div>
+                                    <div class="alerta-contrasenia2 alert alert-danger hidden"></div>
                                 </div>
                             </div>
                         </div>
+
 
 
 
@@ -136,7 +151,8 @@
                                 <div class="caption">
                                     <p>He leido y Acepto todos los terminos y condiciones de la pagina</p>
                                     <input type="hidden" name="accion" value="registrar">
-                                    <input class="btn primary-btn btn-lg btn-block" type="submit" id="btn-enviar-pedido" >
+                                    <input class="btn primary-btn btn-lg btn-block" type="submit"
+                                        id="btn-enviar-pedido">
                                 </div>
                             </div>
                         </div>
@@ -145,8 +161,8 @@
 
                     </div>
                     <!-- /Billing Details -->
-                    
-                    
+
+
                 </div>
 
 
@@ -177,14 +193,16 @@
 											$total=0;
 											$carri=$_SESSION['carrito'];
 											foreach ($carri as $row_car) {?>
-												<div class="order-col">
-													<div><img class="img-pedido" src="./img/productos/<?php echo $row_car['imagen'] ; ?>"></div>
-													<div> <b><?php echo $row_car['cantidad'] ?></b> x <?php echo $row_car['producto'] ?></div>
-													<div><?php echo $row_car['precio_venta']*$row_car['cantidad'] ?>  Bs.</div>
-												</div>
-												
+                                        <div class="order-col">
+                                            <div><img class="img-pedido"
+                                                    src="./img/productos/<?php echo $row_car['imagen'] ; ?>"></div>
+                                            <div> <b><?php echo $row_car['cantidad'] ?></b> x
+                                                <?php echo $row_car['producto'] ?></div>
+                                            <div><?php echo $row_car['precio_venta']*$row_car['cantidad'] ?> Bs.</div>
+                                        </div>
 
-										<?php
+
+                                        <?php
 											$total+=$row_car['cantidad']*$row_car['precio_venta'];
 											$can_prod+=$row_car['cantidad']	;	
 											}
@@ -192,12 +210,13 @@
 										?>
 
                                         <div class="order-col">
-                                            <div><a class="primary-btn" href="ver-carrito.php"><i class="fa fa-arrow-left"></i> Editar carrtio</a></div>
+                                            <div><a class="primary-btn" href="ver-carrito.php"><i
+                                                        class="fa fa-arrow-left"></i> Editar carrtio</a></div>
                                             <div></div>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -213,11 +232,12 @@
                         </div>
                         <div class="order-col">
                             <div><strong>TOTAL</strong></div>
-                            <div><strong class="order-total"><?php echo isset($_SESSION['carrito']) ? $total : '0' ?> Bs.</strong></div>
+                            <div><strong class="order-total"><?php echo isset($_SESSION['carrito']) ? $total : '0' ?>
+                                    Bs.</strong></div>
                         </div>
                     </div>
 
-       
+
                     <div class="payment-method">
                         <h3 class="title">Elija un tipo de pago</h3>
                         <div class="input-radio">
@@ -289,17 +309,18 @@
                             </div>
                         </div>
 
-                        <div class="alerta-pago alert alert-danger hidden"><b>¡Error!</b> Seleccione un metodo de pago </div>
-                    </div>
-                            
-                    
-                    <?php if (isset($_SESSION['user'])) {?>
-                        <div class="caption">
-                            <p>Realizar Pedido</p>
-                            
-                            <input class="btn primary-btn btn-lg btn-block" type="submit" >
+                        <div class="alerta-pago alert alert-danger hidden"><b>¡Error!</b> Seleccione un metodo de pago
                         </div>
-                     <?php  // echo "</form >";
+                    </div>
+
+
+                    <?php if (isset($_SESSION['user'])) {?>
+                    <div class="caption">
+                        <p>Realizar Pedido</p>
+
+                        <input class="btn primary-btn btn-lg btn-block" type="submit">
+                    </div>
+                    <?php  // echo "</form >";
                     }
                     ?>
 
@@ -324,26 +345,7 @@
 
 
 
-<!-- modal de terminos y condiciones -->
-<div class="modal fade" id="modal-terminos-condiciones" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
 
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="modalLabelLarge">Terminos y condiciones</h4>
-            </div>
-
-            <div class="modal-body">
-                Modal content...
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 <?php 

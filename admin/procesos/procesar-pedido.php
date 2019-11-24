@@ -13,6 +13,7 @@ if (isset($_POST['accion'])) {
         
         $resp=false;
         $tipo_pago= filter_var($_POST['payment'], FILTER_SANITIZE_STRING);
+
         if (!isset($_SESSION['user'])) {
       
 
@@ -63,7 +64,7 @@ if (isset($_POST['accion'])) {
                         $departamento=$cliente['Departamento'];
 
                         $resp=true;
-                        echo 'no existe insertado sin pass';
+                        //echo 'no existe insertado sin pass';
                         //echo $id_cliente;
                     } 
     

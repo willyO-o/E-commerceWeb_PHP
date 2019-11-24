@@ -190,14 +190,77 @@ $(function () {
         
     });
 
-
+    $('#registrar-cliente').on('submit', function (e) {
+        e.preventDefault();
+        
+        
+        if (selectCiudad()) {
+            let datos=$(this).serializeArray();
+ 
+ 
+            $.ajax({
+     
+             type: $(this).attr('method'),
+     
+             data: datos,
+     
+             url: $(this).attr('action'),
+     
+             dataType: 'json',
+     
+             success: function (data) {
+                 let resultado= data;
+                 
+                 //console.log(resultado);
+                 
+                 if (resultado.respuesta==='existe') {
+     
+                     Swal.fire(
+                         'Error !!',
+                         'La Direccion de Correo ya existe, intente con otro ',
+                         'error'
+                       )
+                     
+                 } else if (resultado.respuesta ==='insertado') {
+                     Swal.fire(
+                         'Listo !!',
+                         'Registrado.. ',
+                         'success'
+                         )
+    
+                         $('#registrar-cliente')[0].reset();
+                         setTimeout(() => {
+                            window.location.href= 'index.php';
+                         }, 2000);
+                         
+                           
+     
+                 } else {
+                     Swal.fire(
+                         'Error !!',
+                         'El La Direccion de Correo no se registro, intente de nuevo ',
+                         'error'
+                     )
+                 }
+             }
+            });   
+        }
+     }); 
 
     $('#realizar-pedido').on('submit', function (e) {
         e.preventDefault();
 
-        let radio=$('#realizar-pedido input[name=payment]:radio').is(':checked');
+        let inform=$(this).attr('inform');
+        //console.log(inform);
+        let select=true;
+        if (inform=='none') {
+            select=selectCiudad();
+        }
 
-        if (radio) {
+        let radio=$('#realizar-pedido input[name=payment]:radio').is(':checked');
+        
+
+        if (radio && select ) {
             $('.fondo-loader').html('<div class="loading-img-ajax"><img  src="css/ajax-loader.gif" alt="loading" /><br/>Un momento, por favor...</div>');
         
         
@@ -219,7 +282,7 @@ $(function () {
              success: function (data) {
                  let resultado= data;
                  $('.loading-img-ajax').fadeOut(600).html();
-                // console.log(resultado);
+                 //console.log(resultado);
                  
                 if (resultado.respuesta ==='exitoso') {
                     
@@ -267,22 +330,58 @@ $(function () {
     });
 
     // validar password
-    $('#realizar-pedido input[type=password]').on('keyup',function () {
-       
-        let pass=$(this);
+    $('#realizar-pedido input[type=password]').on('input',function () {
+       validarPassword();
+        
+    });
+    $('#registrar-cliente input[type=password]').on('input',function () {
+        validarPassword();
+         
+     });
+
+    function validarPassword() {
+        let pass=$('#password-pedido');
         let btn=$('#btn-enviar-pedido');
         let conPass=$('#confirmPassword-pedido');
 
+
+        if (pass.val().length<8 && pass.val().length>0) {
+            btn.attr('disabled','disabled');
+            
+            $('.alerta-contrasenia2').removeClass('hidden');
+            $('.alerta-contrasenia2').html('Error: password con almenos 8 caracteres');
+        }else{
+            btn.removeAttr('disabled');
+            $('.alerta-contrasenia2').addClass('hidden');
+        }
         if (pass.val()==conPass.val()) {
             btn.removeAttr('disabled');
+            $('.alerta-contrasenia').addClass('hidden');
         }else{
             btn.attr('disabled','disabled');
+            $('.alerta-contrasenia').removeClass('hidden');
+            $('.alerta-contrasenia').html('Error: las contraseñas no coinciden');
         }
-
         
         
-    });
+       
 
+    }
+
+    function selectCiudad() {
+        let ciudad=$('#ciudad');
+        //console.log(ciudad);
+        if (ciudad.val()!=0) {
+            $('.alerta-ciudad').addClass('hidden');
+            return true;
+        }else{
+            $('.alerta-ciudad').html('Seleccione una Ciudad');
+            ciudad.css('border','red 1px solid');
+            $('.alerta-ciudad').removeClass('hidden');
+            
+            return false;
+        }
+    }
     function agregarAlCarrito(id, producto, imagen, precio,cantidad) {
 
         let listaCarrito = $('#mi-carrito-lista');

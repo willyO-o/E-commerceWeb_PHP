@@ -144,12 +144,12 @@
 
                
 
-                        <h4>Imagenes Secundarias <small>(opcional)</small></h4>
+                        <h4>Imagenes Secundarias </h4>
                         <div class="form-group">
                             <label for="imagen1">Subir 2da imagen</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="imagen1" type="file" class="custom-file-input">
+                                    <input name="imagen1" type="file" class="custom-file-input" required>
                                     <label class="custom-file-label" for="imagen">Buscar imagen</label>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                             <label for="imagen2">Subir 3da imagen</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="imagen2" type="file" class="custom-file-input">
+                                    <input name="imagen2" type="file" class="custom-file-input" required>
                                     <label class="custom-file-label" for="imagen">Buscar imagen</label>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                             <label for="imagen3">Subir 4da imagen</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="imagen3" type="file" class="custom-file-input">
+                                    <input name="imagen3" type="file" class="custom-file-input" required>
                                     <label class="custom-file-label" for="imagen">Buscar imagen</label>
                                 </div>
                             </div>
