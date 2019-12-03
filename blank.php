@@ -1,44 +1,8 @@
 <?php 
-	require_once 'inc/layout/header.php';
-	require_once 'inc/layout/navegacion.php';
-
-?>
-
-
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Regular Page</h3>
-						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li class="active">Blank</li>
-						</ul>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /BREADCRUMB -->
-
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-
-<?php 
-	require_once 'inc/layout/footer.php';
+	session_start();
+	if (isset($_GET['salir'])) {
+		session_unset();
+		session_destroy();
+		header('location: index.php');
+	}
 ?>

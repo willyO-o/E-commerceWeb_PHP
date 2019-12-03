@@ -51,9 +51,7 @@
                 </div>
                 <!-- /aside Widget -->
 
-                <!-- aside Widget -->
-
-                <!-- /aside Widget -->
+ 
             </div>
             <!-- /ASIDE -->
 
@@ -96,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="add-to-cart">
-                                <button producto-id="<?php echo $row_prod_cat['id_producto'] ; ?>" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Añadir al
+                                <button producto-id="<?php echo $row_prod_cat['id_producto'] ; ?>" class="add-to-cart-btn" <?php echo $row_prod_cat['stock']<1 ?'disabled': ''?>><i class="fa fa-shopping-cart"></i> Añadir al
                                     Carrito</button>
                             </div>
                         </div>

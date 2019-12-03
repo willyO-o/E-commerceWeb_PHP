@@ -140,7 +140,7 @@
                             </div>
                         </div>
                         <br><br>
-                        <button producto-id="<?php echo $res_pr['id_producto'] ; ?>" class="add-to-cart-btn"><i
+                        <button producto-id="<?php echo $res_pr['id_producto'] ; ?>" class="add-to-cart-btn" <?php echo $res_pr['stock']<1 ?'disabled': ''?>><i
                                 class="fa fa-shopping-cart"></i> Añadir al Carrito</button>
                     </div>
 

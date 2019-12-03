@@ -19,7 +19,7 @@
           <div class="dropdown-divider"></div>
           
           <div class="dropdown-divider"></div>
-          <a href="../index.php?salir=true" class="dropdown-item">
+          <a href="../blank.php?salir=true" class="dropdown-item">
             <i class=" fas fa-sign-out-alt mr-2"></i> Cerrar Sesion
 
           </a>

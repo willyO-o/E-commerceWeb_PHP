@@ -56,7 +56,7 @@
                     <?php 
                         if (isset($_SESSION['user'])) { ?>
                             
-                            <li><a href="index.php?salir=true"><i class="fa fa-sign-out"></i>Cerrar Session</a></li>
+                            <li><a href="blank.php?salir=true"><i class="fa fa-sign-out"></i>Cerrar Session</a></li>
                         <?php if ($_SESSION['user']=='admin') {?>
                                 <li><a href="admin/index.php"><i class="fa fa-asterisk"></i> Administracion</a></li>
                             <?php }?>

@@ -1,11 +1,6 @@
 <?php 
 
 	require_once 'inc/layout/header.php';
-	if (isset($_GET['salir'])) {
-		session_unset();
-		session_destroy();
-		header('location: index.php');
-	}
 	require_once 'inc/layout/navegacion.php';
 	require_once 'admin/modelos/Producto.php';
 	
@@ -134,7 +129,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button producto-id="<?php echo $row_new['id_producto']?>" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
+												<button producto-id="<?php echo $row_new['id_producto']?>" class="add-to-cart-btn" <?php echo $row_new['stock']<1 ?'disabled': ''?>><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -266,7 +261,7 @@
 													</div>
 												</div>
 												<div class="add-to-cart">
-													<button producto-id="<?php echo $row_new['id_producto']?>" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
+													<button producto-id="<?php echo $row_new['id_producto']?>" class="add-to-cart-btn" <?php echo $row_new['stock']<1 ?'disabled': ''?>><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
 												</div>
 											</div>
 											<!-- /product -->
