@@ -352,13 +352,7 @@
                                         </ul>
 
 
-                                        <ul class="reviews-pagination">
-                                            <li class="active">1</li>
-                                            <li><a>2</a></li>
-                                            <li><a>3</a></li>
-                                            <li><a>4</a></li>
-                                            <li><a><i class="fa fa-angle-right"></i></a></li>
-                                        </ul>
+                                        
                                     </div>
                                 </div>
                                 <!-- /Reviews -->
