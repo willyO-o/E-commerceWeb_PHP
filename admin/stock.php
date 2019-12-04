@@ -114,7 +114,6 @@
 
 </section>
 <!-- /.content -->
-
 <div class="modal fade" id="modal-stock" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -125,7 +124,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
+            <form action="procesos/procesar-producto.php" id="formulario-actualizar-stock" method="POST">
 
 
 
@@ -144,11 +143,12 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Cantidad:</label>
-                        <input type="number" min="1" max="99" class="form-control" id="recipient-name" required>
+                        <input type="number" name="cantidad" min="1" max="99" class="form-control" id="modal-cantidad-stock" required>
                     </div>
 
                 </div>
                 <div class="modal-footer">
+                    <input type="hidden" name="accion" value="add-stock">
                     <input type="hidden" name="id" value="" id="id-producto">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al Stock</button>
@@ -157,7 +157,6 @@
         </div>
     </div>
 </div>
-
 
 
 <?php
