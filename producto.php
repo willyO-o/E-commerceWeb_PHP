@@ -459,7 +459,7 @@
                         </div>
                     </div>
                     <div class="add-to-cart">
-                        <button producto-id="<?php echo $row_rel['id_producto'];?>" class="add-to-cart-btn"><i
+                        <button producto-id="<?php echo $row_rel['id_producto'];?>" class="add-to-cart-btn" <?php echo $row_rel['stock']<1 ?'disabled': ''?>><i
                                 class="fa fa-shopping-cart"></i> Añadir al carrito</button>
                     </div>
                 </div>
