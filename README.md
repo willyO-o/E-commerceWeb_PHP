@@ -11,20 +11,17 @@ Se utilizo la version PHP 7.1
 
 <h1 align="center"> Capturas</h1>
 <p align="center"> Pagina de Inicio</p>
-<p align="center"><img src="https://www.webdevelopersnotes.com/wp-content/uploads/create-a-simple-home-page.png"/></p> 
+![ephp1](https://user-images.githubusercontent.com/56971398/104857814-6fbdbb80-58f1-11eb-8996-727a1e9e24de.PNG)
 
-## Tabla de contenidos:
----
 
-- [Badges o escudos](#badges-o-escudos)
-- [Descripción y contexto](#descripción-y-contexto)
-- [Guía de usuario](#guía-de-usuario)
-- [Guía de instalación](#guía-de-instalación)
-- [Cómo contribuir](#cómo-contribuir)
-- [Código de conducta](#código-de-conducta)
-- [Autor/es](#autores)
-- [Información adicional](#información-adicional)
-- [Licencia](#licencia)
-- [Limitación de responsabilidades - Solo BID](#limitación-de-responsabilidades)
+![ephp2](https://user-images.githubusercontent.com/56971398/104857885-dfcc4180-58f1-11eb-8a62-a709bf9048ee.PNG)
 
-## Badges o escudos
+
+![ephp3](https://user-images.githubusercontent.com/56971398/104857894-eeb2f400-58f1-11eb-96fa-4ad6f81e029b.PNG)
+
+
+![ephp4](https://user-images.githubusercontent.com/56971398/104857902-f8d4f280-58f1-11eb-8990-f67b14cd6554.PNG)
+
+![ephp5](https://user-images.githubusercontent.com/56971398/104857914-038f8780-58f2-11eb-846c-db1b1b3c8cf9.PNG)
+
+
