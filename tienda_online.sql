@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2019 a las 03:21:00
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Host: localhost:3306
+-- Generation Time: Jan 17, 2021 at 11:38 PM
+-- Server version: 8.0.22
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tienda_online`
+-- Database: `tienda_online`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
-  `id_categoria` int(2) NOT NULL,
+  `id_categoria` int NOT NULL,
   `categoria` varchar(30) NOT NULL,
   `descripcion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Dumping data for table `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `categoria`, `descripcion`) VALUES
@@ -57,17 +56,17 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ciudad`
+-- Table structure for table `ciudad`
 --
 
 CREATE TABLE `ciudad` (
-  `id_ciudad` int(3) NOT NULL,
+  `id_ciudad` int NOT NULL,
   `ciudad` varchar(50) NOT NULL,
   `Departamento` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `ciudad`
+-- Dumping data for table `ciudad`
 --
 
 INSERT INTO `ciudad` (`id_ciudad`, `ciudad`, `Departamento`) VALUES
@@ -77,11 +76,11 @@ INSERT INTO `ciudad` (`id_ciudad`, `ciudad`, `Departamento`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
+  `id_cliente` int NOT NULL,
   `nombre_cliente` varchar(50) NOT NULL,
   `apellido_cliente` varchar(50) NOT NULL,
   `nit` varchar(15) NOT NULL,
@@ -90,11 +89,11 @@ CREATE TABLE `cliente` (
   `fecha_registro` date NOT NULL,
   `telefono` varchar(14) NOT NULL,
   `direccion` varchar(300) NOT NULL,
-  `id_ciudad` int(3) NOT NULL
+  `id_ciudad` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `nit`, `correo`, `password`, `fecha_registro`, `telefono`, `direccion`, `id_ciudad`) VALUES
@@ -131,25 +130,26 @@ INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `nit`
 (33, 'Lucas', 'Lopez', '7038707', 'lucas@gmail.com', '$2y$12$g4lN4EuA/QdbS0FWl3beHutQR3jwovY3oeBHtSmw.2/BRxBot7XmG', '2019-11-24', '12312312', 'Av buenos Aires #222', 2),
 (34, 'Carlos', 'Paredes', '12221112554', 'carlo@gmial.com', '', '2019-11-24', '12312312', 'Av. 16 de julio  # 6777', 2),
 (35, 'Felipe', 'Cruz', '12312123', 'felip@gmail.com', '$2y$12$VZQuszxtiTd3ot9Wjm/Wmua3pEv96V7FSuVq3Fs1kOlLig2Ewa5sa', '2019-11-24', '12312312', 'C. Machicado #567', 1),
-(36, 'Silvia', 'Paraya', '12312312', 'silvia@gmail.com', '$2y$12$y3xRGFnaaW7VAiFlLxZKb.tDahI62qRvIXny88Q08EtNE5Wpm3dpe', '2019-11-24', '12312312', 'C. Juan de la Riva #777', 1);
+(36, 'Silvia', 'Paraya', '12312312', 'silvia@gmail.com', '$2y$12$y3xRGFnaaW7VAiFlLxZKb.tDahI62qRvIXny88Q08EtNE5Wpm3dpe', '2019-11-24', '12312312', 'C. Juan de la Riva #777', 1),
+(37, 'willy', 'chana', '11111111', 'marcosss.chambi20@gmail.com', '$2y$12$hPWwmsY.JEqRX7pzgkeoluAuG2b3iQlfrRqZ.UfM/.C9947IXc7aC', '2021-01-17', '123123123', 'avenida Sucre 1', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contacto`
+-- Table structure for table `contacto`
 --
 
 CREATE TABLE `contacto` (
-  `id_contacto` int(11) NOT NULL,
+  `id_contacto` int NOT NULL,
   `nombre_contacto` varchar(200) NOT NULL,
   `email_contacto` varchar(200) NOT NULL,
   `telefono_contacto` varchar(15) NOT NULL,
   `mensaje_contacto` text NOT NULL,
-  `fecha_contacto` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fecha_contacto` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `contacto`
+-- Dumping data for table `contacto`
 --
 
 INSERT INTO `contacto` (`id_contacto`, `nombre_contacto`, `email_contacto`, `telefono_contacto`, `mensaje_contacto`, `fecha_contacto`) VALUES
@@ -162,18 +162,18 @@ INSERT INTO `contacto` (`id_contacto`, `nombre_contacto`, `email_contacto`, `tel
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagenes`
+-- Table structure for table `imagenes`
 --
 
 CREATE TABLE `imagenes` (
-  `id_producto` int(10) NOT NULL,
+  `id_producto` int NOT NULL,
   `imagen1` varchar(100) NOT NULL,
   `imagen2` varchar(100) NOT NULL,
   `imagen3` varchar(199) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `imagenes`
+-- Dumping data for table `imagenes`
 --
 
 INSERT INTO `imagenes` (`id_producto`, `imagen1`, `imagen2`, `imagen3`) VALUES
@@ -196,16 +196,16 @@ INSERT INTO `imagenes` (`id_producto`, `imagen1`, `imagen2`, `imagen3`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `marca`
+-- Table structure for table `marca`
 --
 
 CREATE TABLE `marca` (
-  `id_marca` int(3) NOT NULL,
+  `id_marca` int NOT NULL,
   `marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `marca`
+-- Dumping data for table `marca`
 --
 
 INSERT INTO `marca` (`id_marca`, `marca`) VALUES
@@ -234,18 +234,18 @@ INSERT INTO `marca` (`id_marca`, `marca`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `participa`
+-- Table structure for table `participa`
 --
 
 CREATE TABLE `participa` (
-  `id_venta` int(11) NOT NULL,
-  `id_producto` int(10) NOT NULL,
-  `cantidad_pro` int(3) NOT NULL,
+  `id_venta` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `cantidad_pro` int NOT NULL,
   `precio` float(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `participa`
+-- Dumping data for table `participa`
 --
 
 INSERT INTO `participa` (`id_venta`, `id_producto`, `cantidad_pro`, `precio`) VALUES
@@ -266,18 +266,18 @@ INSERT INTO `participa` (`id_venta`, `id_producto`, `cantidad_pro`, `precio`) VA
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `participa_pedido`
+-- Table structure for table `participa_pedido`
 --
 
 CREATE TABLE `participa_pedido` (
-  `id_pedido` int(11) NOT NULL,
-  `id_producto` int(10) NOT NULL,
-  `cantidad_producto` int(2) NOT NULL,
+  `id_pedido` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `cantidad_producto` int NOT NULL,
   `precio` float(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `participa_pedido`
+-- Dumping data for table `participa_pedido`
 --
 
 INSERT INTO `participa_pedido` (`id_pedido`, `id_producto`, `cantidad_producto`, `precio`) VALUES
@@ -319,21 +319,21 @@ INSERT INTO `participa_pedido` (`id_pedido`, `id_producto`, `cantidad_producto`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedido`
+-- Table structure for table `pedido`
 --
 
 CREATE TABLE `pedido` (
-  `id_pedido` int(11) NOT NULL,
+  `id_pedido` int NOT NULL,
   `tipo_pago` varchar(40) NOT NULL,
   `productos` text NOT NULL,
   `total_pago` float(10,2) NOT NULL,
-  `fecha_pedido` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `estado_pedido` int(1) NOT NULL,
-  `id_cliente` int(10) NOT NULL
+  `fecha_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `estado_pedido` int NOT NULL,
+  `id_cliente` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `pedido`
+-- Dumping data for table `pedido`
 --
 
 INSERT INTO `pedido` (`id_pedido`, `tipo_pago`, `productos`, `total_pago`, `fecha_pedido`, `estado_pedido`, `id_cliente`) VALUES
@@ -361,25 +361,25 @@ INSERT INTO `pedido` (`id_pedido`, `tipo_pago`, `productos`, `total_pago`, `fech
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
+-- Table structure for table `producto`
 --
 
 CREATE TABLE `producto` (
-  `id_producto` int(10) NOT NULL,
+  `id_producto` int NOT NULL,
   `producto` varchar(100) NOT NULL,
   `imagen` varchar(300) NOT NULL,
   `descripcion_prod` text NOT NULL,
   `caracteristicas_prod` text NOT NULL,
-  `stock` int(4) NOT NULL,
-  `stock_minimo` int(2) NOT NULL,
+  `stock` int NOT NULL,
+  `stock_minimo` int NOT NULL,
   `precio_venta` float(6,2) NOT NULL,
   `garantia` varchar(10) NOT NULL,
-  `id_marca` int(3) NOT NULL,
-  `id_categoria` int(2) NOT NULL
+  `id_marca` int NOT NULL,
+  `id_categoria` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `producto`
+-- Dumping data for table `producto`
 --
 
 INSERT INTO `producto` (`id_producto`, `producto`, `imagen`, `descripcion_prod`, `caracteristicas_prod`, `stock`, `stock_minimo`, `precio_venta`, `garantia`, `id_marca`, `id_categoria`) VALUES
@@ -402,21 +402,21 @@ INSERT INTO `producto` (`id_producto`, `producto`, `imagen`, `descripcion_prod`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `resenia`
+-- Table structure for table `resenia`
 --
 
 CREATE TABLE `resenia` (
-  `id_reseña` int(11) NOT NULL,
+  `id_reseña` int NOT NULL,
   `nombre_res` varchar(50) NOT NULL,
   `email_res` varchar(200) NOT NULL,
   `resenia` text NOT NULL,
-  `calificacion` int(1) NOT NULL,
+  `calificacion` int NOT NULL,
   `fecha_resenia` date NOT NULL,
-  `id_producto` int(10) NOT NULL
+  `id_producto` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `resenia`
+-- Dumping data for table `resenia`
 --
 
 INSERT INTO `resenia` (`id_reseña`, `nombre_res`, `email_res`, `resenia`, `calificacion`, `fecha_resenia`, `id_producto`) VALUES
@@ -429,50 +429,51 @@ INSERT INTO `resenia` (`id_reseña`, `nombre_res`, `email_res`, `resenia`, `cali
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(2) NOT NULL,
+  `id_usuario` int NOT NULL,
   `usuario` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT 1,
+  `estado` tinyint(1) NOT NULL DEFAULT '1',
   `ultima_conexion` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `usuario`, `nombre`, `password`, `estado`, `ultima_conexion`) VALUES
 (1, 'marcos123', 'marcos', 'marcos123', 0, '2019-11-21 19:44:55'),
 (2, 'marc', 'juan', '1234', 0, '2019-11-21 19:44:58'),
 (3, 'Willy123', 'Willy Marcos', '$2y$12$BJpoxRFcvkEY5QAkFGukKO9Bz465NoYCppMVLUucVFB0sh1cjz.UO', 1, '0000-00-00 00:00:00'),
-(5, 'Juan', 'Juan', '$2y$12$1LybQh14ugcvw38//fNtuufl253UniIvUvOh3x.pXrWRrM0MPrVn.', 1, '2019-11-21 19:41:34'),
+(5, 'Juan', 'Juan', '$2y$12$1LybQh14ugcvw38//fNtuufl253UniIvUvOh3x.pXrWRrM0MPrVn.', 1, '2020-11-15 20:05:01'),
 (7, 'Joselito', 'Jose', '$2y$12$Ag6/8jjG8.TeU.t8/pqO.OADHSYzuIddH9ToRq2H6UBzi3yVBR6UW', 0, '2019-11-21 19:41:42'),
-(8, 'admin', 'willy', '$2y$12$up.7ZsUK0PWmc5IWmo1VKO3KdclpaJKUg9wyGPBQ05yFrellSGtb2', 1, '2019-12-03 02:04:21'),
+(8, 'admin', 'willy', '$2y$12$up.7ZsUK0PWmc5IWmo1VKO3KdclpaJKUg9wyGPBQ05yFrellSGtb2', 1, '2019-12-06 03:35:31'),
 (14, 'Erika123', 'Erika', '$2y$12$4EzusPU3M7nfIdp1IeGHp.OzzmdsJKJ1JT8aMvzNPriUa.PCrtfiS', 1, '2019-11-21 19:41:30'),
 (15, 'matha123', 'Martha', '$2y$12$D/OgOF6gMA.uRn6scC.clu/yvX8QICTXV96U3DuVjFmAgRcuK..3.', 1, '2019-11-21 19:44:40'),
 (18, 'Jonas1234', 'willy', '$2y$12$NqM0PRrgipuXMMsz028z4.zRka3muXfG.X.pocDunevQ7MWvRoJVa', 1, '2019-11-21 19:53:02'),
-(19, 'Alfonso5632', 'Alfonso Mamani', '$2y$12$SUITCgD88w4Mc2woBitjV.2tSrbdfjL2j1iDqzKFO2/13jhHSTd/2', 0, NULL);
+(19, 'Alfonso5632', 'Alfonso Mamani', '$2y$12$SUITCgD88w4Mc2woBitjV.2tSrbdfjL2j1iDqzKFO2/13jhHSTd/2', 0, NULL),
+(20, 'willy1412', 'willy chana', '$2y$12$lUWmBzPDv5GbUg/LrfM3feBe4BxmP6QGfj5X6GnRsa2PXVmMzr46G', 1, '2020-11-15 20:07:23');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `venta`
+-- Table structure for table `venta`
 --
 
 CREATE TABLE `venta` (
-  `id_venta` int(11) NOT NULL,
+  `id_venta` int NOT NULL,
   `tipo_pago` varchar(30) NOT NULL,
   `total_pago` float(10,2) NOT NULL,
-  `fecha_venta` timestamp NOT NULL DEFAULT current_timestamp(),
-  `id_cliente` int(11) NOT NULL
+  `fecha_venta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_cliente` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `venta`
+-- Dumping data for table `venta`
 --
 
 INSERT INTO `venta` (`id_venta`, `tipo_pago`, `total_pago`, `fecha_venta`, `id_cliente`) VALUES
@@ -484,69 +485,69 @@ INSERT INTO `venta` (`id_venta`, `tipo_pago`, `total_pago`, `fecha_venta`, `id_c
 (35, 'Contra-entrega', 431.17, '2019-11-11 04:00:00', 20);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indices de la tabla `ciudad`
+-- Indexes for table `ciudad`
 --
 ALTER TABLE `ciudad`
   ADD PRIMARY KEY (`id_ciudad`);
 
 --
--- Indices de la tabla `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
   ADD KEY `id_cuidad` (`id_ciudad`);
 
 --
--- Indices de la tabla `contacto`
+-- Indexes for table `contacto`
 --
 ALTER TABLE `contacto`
   ADD PRIMARY KEY (`id_contacto`);
 
 --
--- Indices de la tabla `imagenes`
+-- Indexes for table `imagenes`
 --
 ALTER TABLE `imagenes`
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `marca`
+-- Indexes for table `marca`
 --
 ALTER TABLE `marca`
   ADD PRIMARY KEY (`id_marca`);
 
 --
--- Indices de la tabla `participa`
+-- Indexes for table `participa`
 --
 ALTER TABLE `participa`
   ADD KEY `id_venta` (`id_venta`),
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `participa_pedido`
+-- Indexes for table `participa_pedido`
 --
 ALTER TABLE `participa_pedido`
   ADD KEY `id_producto` (`id_producto`),
   ADD KEY `id_pedido` (`id_pedido`);
 
 --
--- Indices de la tabla `pedido`
+-- Indexes for table `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- Indices de la tabla `producto`
+-- Indexes for table `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id_producto`),
@@ -554,140 +555,140 @@ ALTER TABLE `producto`
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- Indices de la tabla `resenia`
+-- Indexes for table `resenia`
 --
 ALTER TABLE `resenia`
   ADD PRIMARY KEY (`id_reseña`),
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indices de la tabla `venta`
+-- Indexes for table `venta`
 --
 ALTER TABLE `venta`
   ADD PRIMARY KEY (`id_venta`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_categoria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `ciudad`
+-- AUTO_INCREMENT for table `ciudad`
 --
 ALTER TABLE `ciudad`
-  MODIFY `id_ciudad` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ciudad` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT de la tabla `contacto`
+-- AUTO_INCREMENT for table `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_contacto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `marca`
+-- AUTO_INCREMENT for table `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_marca` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT de la tabla `pedido`
+-- AUTO_INCREMENT for table `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id_pedido` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
--- AUTO_INCREMENT de la tabla `producto`
+-- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_producto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `resenia`
+-- AUTO_INCREMENT for table `resenia`
 --
 ALTER TABLE `resenia`
-  MODIFY `id_reseña` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_reseña` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `venta`
+-- AUTO_INCREMENT for table `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_venta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `cliente`
+-- Constraints for table `cliente`
 --
 ALTER TABLE `cliente`
-  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_ciudad`) REFERENCES `ciudad` (`id_ciudad`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_ciudad`) REFERENCES `ciudad` (`id_ciudad`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `imagenes`
+-- Constraints for table `imagenes`
 --
 ALTER TABLE `imagenes`
   ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `participa`
+-- Constraints for table `participa`
 --
 ALTER TABLE `participa`
   ADD CONSTRAINT `participa_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `venta` (`id_venta`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `participa_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `participa_pedido`
+-- Constraints for table `participa_pedido`
 --
 ALTER TABLE `participa_pedido`
   ADD CONSTRAINT `participa_pedido_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `participa_pedido_ibfk_2` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pedido`
+-- Constraints for table `pedido`
 --
 ALTER TABLE `pedido`
   ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `producto`
+-- Constraints for table `producto`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `resenia`
+-- Constraints for table `resenia`
 --
 ALTER TABLE `resenia`
   ADD CONSTRAINT `resenia_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `venta`
+-- Constraints for table `venta`
 --
 ALTER TABLE `venta`
   ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
