@@ -11,6 +11,7 @@ Se utilizo la version PHP 7.1
 
 <h1 align="center"> Capturas</h1>
 <p align="center"> Pagina de Inicio</p>
+
 ![ephp1](https://user-images.githubusercontent.com/56971398/104857814-6fbdbb80-58f1-11eb-8996-727a1e9e24de.PNG)
 
 
